@@ -1,4 +1,5 @@
 // import React Bootstrap components
+import { Form, Col, Row } from 'react-bootstrap'
 
 // import css modules
 import cssModules from "./Form.module.css";
@@ -6,6 +7,7 @@ import cssModules from "./Form.module.css";
 const styles = {
   form: {
     margin: "16px 20% 0",
+    backgroundColor: "red"
   },
   formGroup: {
     marginBottom: "16px",
@@ -28,7 +30,7 @@ const styles = {
 };
 
 
-function FormComponent() {
+function FormComp() {
   return (
     <div>
       <form style={styles.form}>
@@ -65,10 +67,21 @@ function FormComponent() {
           </select>
         </div>
         {/* code here */}
-
+        <Form style={{ backgroundColor: "blue" }}>
+          <Row>
+            <Form.Group as={Col} md="6">
+              <Form.Label>City</Form.Label>
+              <Form.Control type="text" placeholder="City" required />
+            </Form.Group>
+            <Form.Group as={Col} md="6">
+              <Form.Label>State</Form.Label>
+              <Form.Control type="text" placeholder="State" required />
+            </Form.Group>
+          </Row>
+        </Form>
       </form>
     </div>
   )
 }
 
-export default FormComponent
+export default FormComp
