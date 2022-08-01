@@ -7,12 +7,13 @@ import About from "./pages/About";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 // import component here
+import DetailUser from "./pages/DetailUser";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* Setup navigation element */}
+        {/* Setup navigation element */ }
         <nav>
           <ul>
             <li>
@@ -29,11 +30,12 @@ function App() {
       </div>
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/profile" element={<Profile />} />
-        <Route exact path="/signin" element={<SignIn />} />
-        {/* define new route */}
+        <Route exact path="/" element={ <Home /> } />
+        <Route exact path="/about" element={ <About /> } />
+        <Route exact path="/profile" element={ <Profile /> } />
+        <Route exact path="/signin" element={ <SignIn /> } />
+        {/* define new route */ }
+        <Route exact path="/user/:id" element={ <DetailUser /> } />
       </Routes>
     </Router>
   );
